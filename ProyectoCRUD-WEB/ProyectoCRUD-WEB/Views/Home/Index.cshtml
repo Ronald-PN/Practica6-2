@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <table class=" table">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Tipo
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Crear
+            </th>
+            <th>
+                Modificar
+            </th>
+            <th>
+                Borrar
+            </th>
+            </tr>
+        @foreach (var producto in Model)
+        {
+        <tr>
+            <td>
+                @producto.Id
+            </td>
+            <td>
+                @producto.Descripcion
+            </td>
+            <td>
+                @producto.Tipo
+            </td>
+            <td>
+                @producto.Precio
+            </td>
+            <td>
+                <a href="/Home/Creacion?cod=@producto.Id">crear?</a>
+            </td>
+            <td>
+                <a href="/Home/Modificacion?cod=@producto.Id">Modificar?</a>
+            </td>
+            <td>
+            
+                <a href="/Home/Borra?cod=@producto.Id">Borrar?</a>
+            </td>
+            </tr>
+        }
+            </table>
+    <a href="/Home/">Agregar</a>
+                
+
+</body>
+</html>
